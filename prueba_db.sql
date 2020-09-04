@@ -53,10 +53,34 @@
         FOREIGN KEY (producto_id) REFERENCES productos(id),
         FOREIGN KEY (factura_id) REFERENCES facturas(id),
         cantidad INT NOT NULL
-    );CREATE TABLE listado_productos(
---     factura_id INT,
---     producto_id INT,
---     FOREIGN KEY(factura_id) REFERENCES facturas(id),
---     FOREIGN KEY(producto_id) REFERENCES productos(id),
---     cantidad INT NOT NULL
--- );
+    );
+
+    -------------POBLAR TABLAS-------------
+
+    INSERT INTO clientes(nombre,rut,direccion)
+    VALUES
+        ('cliente1',111111,'direccion cliente1'),
+        ('cliente2',222222,'direccion cliente2'),
+        ('cliente3',333333,'direccion cliente3'),
+        ('cliente4',444444,'direccion cliente4'),
+        ('cliente5',555555,'direccion cliente5')
+    ;
+
+    INSERT INTO categorias(nombre,descripcion)
+    VALUES
+        ('categoria1','esta es la descripcion de la categ1'),
+        ('categoria2','esta es la descripcion de la categ2'),
+        ('categoria3','esta es la descripcion de la categ3')
+    ;
+    
+    INSERT INTO productos(nombre,descripcion,valor_unitario,categoria_id)
+    VALUES  
+        ('platano','descripcion platanos',100,1),
+        ('cafe dolca','descripcion cafe dolca',500,2),
+        ('pantalon','descripcion pantalon',800,3),
+        ('manzana','descripcion de las manzanas',150,1),
+        ('cafe royal','descripcion del cafe royal',600,2),
+        ('vestido','descripcion del vestido',1000,3),
+        ('piña', 'descripcion',300,1),
+        ('cafe donky', 'descripcion cafe donky',400,2)
+    ;
